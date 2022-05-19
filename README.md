@@ -1,5 +1,5 @@
-### EX NO : 06 
-### DATE  :
+## EX NO : 06 
+## DATE  :
 # <p align="center"> ANN BY BACK PROPAGATION ALGORITHM </p>
 ## Aim:
    To implement multi layer artificial neural network using back propagation algorithm.
@@ -30,7 +30,7 @@ The error gradient is given by: a. For the output units. b. For the hidden units
 /*
 Program to implement ANN by back propagation algorithm.
 Developed by   : Aditya JV
-RegisterNumber : 212220230001
+RegisterNumber : 212220230002
 */
 ```
 ```python
