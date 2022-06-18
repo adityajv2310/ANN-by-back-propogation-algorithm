@@ -1,5 +1,5 @@
-### EX NO : 06 
-### DATE  :
+### EX NO : 06
+### DATE  : 02.05.2022
 # <p align="center"> ANN BY BACK PROPAGATION ALGORITHM </p>
 ## Aim:
    To implement multi layer artificial neural network using back propagation algorithm.
@@ -8,29 +8,52 @@
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner /Google Colab
 
 ## Related Theory Concept:
-Algorithm for ANN Backpropagation: • Weight initialization: Set all weights and node thresholds to small random numbers. Note that the node threshold is the negative of the weight from the bias unit(whose activation level is fixed at 1).
+Algorithm for ANN Backpropagation: 
+• Weight initialization: 
+        Set all weights and node thresholds to small random numbers. Note that the node threshold is the negative of the weight from the bias unit(whose activation level is fixed at 1). 
+ 
+• Calculation of Activation: 
+</br>
+1.	The activation level of an input is determined by the instance presented to the network. 
+2.	The activation level oj of a hidden and output unit is determined. 
 
-• Calculation of Activation:
+• Weight training:
 
-The activation level of an input is determined by the instance presented to the network.
-The activation level oj of a hidden and output unit is determined. • Weight training:
-Start at the output units and work backward to the hidden layer recursively and adjust weights.
-The weight change is completed.
-The error gradient is given by: a. For the output units. b. For the hidden units. Repeat iterations until convergence in term of the selected error criterion. An iteration includes presenting an instance, calculating activation and modifying weights.
+1.	Start at the output units and work backward to the hidden layer recursively and adjust weights. 
+
+2.	The weight change is completed. 
+
+3.	The error gradient is given by: 
+
+a.	For the output units. 
+
+b.	For the hidden units.
+
+4.	Repeat iterations until convergence in term of the selected error criterion. An iteration includes presenting an instance, calculating activation and modifying weights. 
+
+</br>
+</br>
+</br> 
+
 ## Algorithm
-1.Import packages\
-2.Defining Sigmoid Function for output\
-3.Derivative of Sigmoid Function\
-4.Initialize variables for training iterations and learning rate\
-5.Defining weight and biases for hidden and output layer\
+1.Import packages
+</br>
+2.Defining Sigmoid Function for output
+</br>
+3.Derivative of Sigmoid Function
+</br>
+4.Initialize variables for training iterations and learning rate
+</br>
+5.Defining weight and biases for hidden and output layer
+</br>
 6.Updating Weights
 
 ## Program:
 ```
 /*
 Program to implement ANN by back propagation algorithm.
-Developed by   : Aditya JV
-RegisterNumber : 212220230002
+Developed by   : ADITYA JV
+RegisterNumber :  212220230002
 */
 ```
 ```python
@@ -47,18 +70,17 @@ def derivatives_sigmoid(x):
 
 epoch=7000
 lr=0.1
-inputlayer_neurons=2 
-hiddenlayer_neurons=3 
-output_neurons=1 
+inputlayer_neurons=2 #no of features in dataset
+hiddenlayer_neurons=3 #no of hidden layer
+output_neurons=1 #no of neuron at output layer
 
 wh=np.random.uniform(size=(inputlayer_neurons,hiddenlayer_neurons))
 bh=np.random.uniform(size=(1,hiddenlayer_neurons))
 wout=np.random.uniform(size=(hiddenlayer_neurons,output_neurons))
 bout=np.random.uniform(size=(1,output_neurons))
 
-
 for i in range(epoch):
-
+#forward propagation
     hinp1=np.dot(X,wh)
 hinp=hinp1+bh
 hlayer_act=sigmoid(hinp)
@@ -66,7 +88,7 @@ outinp1=np.dot(hlayer_act,wout)
 outinp=outinp1+bout
 output=sigmoid(outinp)
 
-
+#backward propagation
 EO=y-output
 outgrad=derivatives_sigmoid(output)
 d_output=EO*outgrad
@@ -81,9 +103,7 @@ print("Predicted Output:\n"+str(output))
 ```
 
 ## Output:
-![image](https://user-images.githubusercontent.com/75235386/169322211-94690a93-ef25-407f-9992-4b4abe2e7d56.png)
-
-
+![Capture](https://user-images.githubusercontent.com/75235747/169423942-5fa500ea-a197-4490-884f-7129c7d95d0e.JPG)
 
 ## Result:
 Thus the python program successully implemented multi layer artificial neural network using back propagation algorithm.
